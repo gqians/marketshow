@@ -1,14 +1,14 @@
 //import client from './conn';
 import axios from 'axios';
 import config  from '../config'
-const map=new Map();
+//const map=new Map();
 async function getdata (sql,cli){
   console.log('开始获取数据');
   const res = await cli.query(sql);
-  await changeData(res);
-  console.log(map.size);
-     //console.log(map);
-  return map;
+  //await changeData(res);
+  //console.log(map.size);
+  //console.log(map);
+  return res;
 }
 //将获取到的经纬度通过天地图api逆编码
  async function changeData(res){
