@@ -10,6 +10,7 @@ export default app=>{
     router.get('/allcount/:date/:level',HomeController.allcount);
     router.get('/maxCategory/:date/:level',HomeController.maxCategory);
     router.get('/maxSell/:level',HomeController.maxSell);
+    router.get('/levelLoc',HomeController.levelLoc);
     app.use(router.routes());
 }
 //allcount/:date/:address

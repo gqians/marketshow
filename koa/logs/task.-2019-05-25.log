@@ -19,3 +19,4 @@
 [2019-05-25T19:40:30.969] [INFO] cheese - {"projectName":"koa2-tutorial","serverIp":"192.168.142.1","method":"GET","url":"/maxCategory/201504/city","host":"localhost:4156","message":{"responseTime":"响应时间为0.522s"},"userAgent":"PostmanRuntime/7.13.0"}
 [2019-05-25T20:51:48.978] [INFO] cheese - {"projectName":"koa2-tutorial","serverIp":"192.168.142.1","method":"GET","url":"/maxSell/city","host":"localhost:4156","message":{"responseTime":"响应时间为0.138s"},"userAgent":"PostmanRuntime/7.13.0"}
 [2019-05-25T20:52:11.162] [INFO] cheese - {"projectName":"koa2-tutorial","serverIp":"192.168.142.1","method":"GET","url":"/maxSell/county","host":"localhost:4156","message":{"responseTime":"响应时间为0.001s"},"userAgent":"PostmanRuntime/7.13.0"}
+[2019-05-25T22:10:27.543] [INFO] cheese - {"projectName":"koa2-tutorial","serverIp":"192.168.142.1","method":"GET","url":"/maxSell/county","host":"localhost:4156","message":{"responseTime":"响应时间为0.072s"},"userAgent":"PostmanRuntime/7.13.0"}

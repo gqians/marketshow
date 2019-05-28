@@ -46,7 +46,13 @@ export default {
                 order by ${level}`
          const cli=await client();
          const res=await getdata(sql,cli);
-         console.log(res);
+         ctx.response.body=res;
+         await next();
+    },
+    levelLoc : async(ctx,next)=>{
+         let sql='select * from mv_loc'
+         const cli=await client();
+         const res=await getdata(sql,cli);
          ctx.response.body=res;
          await next();
     }

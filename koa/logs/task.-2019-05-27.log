@@ -1,0 +1,2 @@
+[2019-05-27T11:49:40.782] [INFO] cheese - {"projectName":"koa2-tutorial","serverIp":"192.168.142.1","method":"GET","url":"/allcount/201407/county","host":"localhost:4156","message":{"responseTime":"响应时间为0.04s"},"userAgent":"PostmanRuntime/7.13.0"}
+[2019-05-27T13:11:46.788] [INFO] cheese - {"projectName":"koa2-tutorial","serverIp":"192.168.142.1","method":"GET","url":"/levelLoc","host":"localhost:4156","message":{"responseTime":"响应时间为0.31s"},"userAgent":"PostmanRuntime/7.13.0"}
