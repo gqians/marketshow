@@ -1,7 +1,8 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import 'leaflet.chinatmsproviders';
-import {tiledMapLayer} from '@supermap/iclient-leaflet';
+import { tiledMapLayer,echartsLayer} from '@supermap/iclient-leaflet';
+import echart from './echartLayer';
 const getTileLayer=async ()=>{
    let host = window.isLocal ? window.server : "http://support.supermap.com.cn:8090";
    let ChinaPromise = tiledMapLayer(host + '/iserver/services/map-china400/rest/maps/China', {noWrap: true});

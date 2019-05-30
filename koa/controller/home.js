@@ -13,6 +13,7 @@ export default {
          console.log(sql);
          const cli=await client();
          const res=await getdata(sql,cli);
+         cli.release();
          ctx.response.body=res;
          await next();
     },
@@ -32,6 +33,7 @@ export default {
                    where table1.num=table2.max and table1.city=table2.city`;
          const cli=await client();
          const res=await getdata(sql,cli);
+         cli.release();
          ctx.response.body=res;
          await next();
     },
@@ -46,6 +48,7 @@ export default {
                 order by ${level}`
          const cli=await client();
          const res=await getdata(sql,cli);
+         cli.release();
          ctx.response.body=res;
          await next();
     },
@@ -53,6 +56,7 @@ export default {
          let sql='select * from mv_loc'
          const cli=await client();
          const res=await getdata(sql,cli);
+         cli.release();
          ctx.response.body=res;
          await next();
     }

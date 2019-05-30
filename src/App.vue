@@ -6,7 +6,7 @@
 
 <script>
 import Map from './components/Map.vue'
-
+import NavMenu from './components/NavMenu.vue'
 export default {
   name: 'app',
   components: {
@@ -22,5 +22,6 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
+  
 }
 </style>
