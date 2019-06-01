@@ -9,7 +9,7 @@ import router from './router'
 const app=new Koa();
 app.use(cors({
     origin: "*",
-    exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],pm2
+    exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
     maxAge: 5,
     credentials: true,
     allowMethods: ['GET', 'POST', 'DELETE'],

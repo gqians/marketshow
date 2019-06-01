@@ -5,8 +5,9 @@
 </template>
 
 <script>
-import Map from './components/Map.vue'
-import NavMenu from './components/NavMenu.vue'
+import Map from './components/Map.vue';
+import NavMenu from './components/NavMenu.vue';
+
 export default {
   name: 'app',
   components: {
