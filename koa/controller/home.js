@@ -24,13 +24,14 @@ export default {
          let params=ctx.params;
          let date=params.date;
          let level=params.level;
-         let sql=`select table1.city,table1.num,table1.category_name from (
+         let sql = `select table1.city,table1.num,table1.category_name from (
                     select max(num),city from
                       (select * from all_level_category('public.mv_${date}','${level}')) as table3
                         group by city
                         order by city desc
                       ) as table2,(select * from all_level_category('public.mv_${date}','${level}')) as table1
                    where table1.num=table2.max and table1.city=table2.city`;
+     console.log(sql);
          const cli=await client();
          const res=await getdata(sql,cli);
          cli.release();

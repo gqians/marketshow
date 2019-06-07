@@ -27,18 +27,30 @@
         </el-menu-item-group>
    </el-submenu>
 
-       <el-menu-item index="1">
-         <i class="el-icon-view"></i>
-         <span slot="title">实验二</span>
-       </el-menu-item>
-       <el-menu-item index="2">
-         <i class="el-icon-view"></i>
-         <span slot="title">实验二</span>
-       </el-menu-item>
-       <el-menu-item index="2">
-         <i class="el-icon-view"></i>
-         <span slot="title">实验三</span>
-       </el-menu-item>
+       <el-submenu index="2">
+        <template slot="title">
+          <i class="el-icon-menu"></i>
+          <span>实验三</span>
+        </template>
+         <el-menu-item-group>
+          <template slot="title">选择级别</template>
+          <el-menu-item index="2-1" @click="cityclick_3">市</el-menu-item>
+          <el-menu-item index="2-2" @click="countyclick_3">县</el-menu-item>
+        </el-menu-item-group>
+       </el-submenu>
+
+      <el-submenu index="3">
+        <template slot="title">
+          <i class="el-icon-menu"></i>
+          <span>实验六</span>
+        </template>
+         <el-menu-item-group>
+          <template slot="title">选择级别</template>
+          <el-menu-item index="3-1" @click="cityclick_6">市</el-menu-item>
+          <el-menu-item index="3-2" @click="countyclick_6">县</el-menu-item>
+        </el-menu-item-group>
+       </el-submenu>
+      
       </el-menu>
     </el-col>
    </el-row>    
@@ -60,7 +72,8 @@
                 top: 0,
                 left: 0,
                 showslider: false,
-                level:''
+                level:'',
+                showslider_3: false
             }
         },
     methods: {
@@ -87,16 +100,45 @@
       },
       cityclick(){
         this.showslider=true;
+        this.showslider_3=false;
         this.level="city";
-        this.$emit("initcity",this.showslider,this.level);
+        this.$emit("initcity",this.showslider,this.showslider_3,this.level);
         bus.$emit("day",0);
       },
       countyclick(){
         this.showslider=true;
+        this.showslider_3=false;
         this.level="county";
-        this.$emit("initcounty",this.showslider,this.level);
+        this.$emit("initcounty",this.showslider,this.showslider_3,this.level);
         bus.$emit("day",0);
+      },
+      cityclick_3(){
+        this.showslider=false;
+        this.showslider_3=true;
+        this.level="city";
+        this.$emit("initcity_3",this.showslider,this.showslider_3,this.level);
+        bus.$emit("day",0);
+      },
+      countyclick_3(){
+        this.showslider=false;
+        this.showslider_3=true;
+        this.level="county";
+        this.$emit("initcounty_3",this.showslider,this.showslider_3,this.level);
+        bus.$emit("day",0);
+      },
+      cityclick_6(){
+        this.showslider=false;
+        this.showslider_3=false;
+        this.level="city";
+        this.$emit("initcity_6",this.showslider,this.showslider_3,this.level);
+      },
+      countyclick_6(){
+        this.showslider=false;
+        this.showslider_3=false;
+        this.level="county";
+        this.$emit("initcounty_6",this.showslider,this.showslider_3,this.level);
       }
+
     },
     components: {
       VueDragResize

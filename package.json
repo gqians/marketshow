@@ -11,9 +11,11 @@
     "@supermap/iclient-leaflet": "^9.1.2",
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "echarts": "^4.2.1",
     "element-ui": "^2.8.2",
     "leaflet": "^1.5.1",
     "leaflet.chinatmsproviders": "^2.0.3",
+    "less-loader": "^5.0.0",
     "vue": "^2.6.10",
     "vue-drag-resize": "^1.3.2"
   },

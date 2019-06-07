@@ -31,27 +31,30 @@ import bus from '../utils/bus';
           80: '201505',
           88: '201506'
         },
-        mylayer:{},
-        originlayer:{}
+        originmakers:{},
+        mymakers:{}
       }
     },
     methods:{
         Tchange(event) {
-          if(Object.keys(this.mylayer).length==0){
-            this.mylayer=this.layer;
-            this.originlayer=this.layer;
+          if(Object.keys(this.mymakers).length==0){
+            this.mymakers=this.makers;
+            this.originmakers=this.makers;
           }
-          if(this.originlayer!==this.layer){
-            this.mylayer=this.layer;
+          if(this.originmakers!==this.makers){
+            this.mymakers=this.makers;
           }
-          this.mylayer.remove();
+         for(let maker of this.mymakers){
+             maker.remove();
+         }
           this.$emit("showloading",true);
-          echart.dopackage(this.insLoc,this.insMap,Reflect.get(this.marks,this.value),this.level).then((layer)=>{
-              this.mylayer=layer;
-              this.$emit("completeloading",false,this.mylayer);
+          echart.dopackage_2(this.insLoc,this.insMap,Reflect.get(this.marks,this.value),this.level).then((makers)=>{
+              this.mymakers=makers;
+              this.$emit("completeloading",false,this.mymakers);
           });
         },
-        stopon(){
+      //下面两个函数是组件通用
+      stopon(){
        // console.log(map.dragging.enable());
         this.insMap.dragging.disable();//进入导航后禁止移动地图
         this.insMap.doubleClickZoom.disable();//进入导航后禁止双击放大
@@ -61,7 +64,7 @@ import bus from '../utils/bus';
         this.insMap.doubleClickZoom.enable();
       }
     },
-    props:["insMap","insLoc","show","level","layer"],
+    props:["insMap","insLoc","show","level","makers"],
     created(){
       bus.$on('day',(val)=>{
         this.value=val;

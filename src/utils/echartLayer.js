@@ -1,4 +1,9 @@
 import axios from 'axios';
+/**
+ * 获取实验二所需的数据
+ * date:日期
+ * level:city or county
+ */
 const ex2_Getdata= async (date,level)=>{
     try{
         const data =await axios.get(`http://localhost:4156/allcount/${date}/${level}`);
@@ -8,6 +13,9 @@ const ex2_Getdata= async (date,level)=>{
      }
     
 }
+/**
+ * 获取经纬度与地名表，异步函数，只在mounted阶段执行一次
+ */
 const getLayerInfor= async ()=>{
     try{
         const data =await axios.get(`http://localhost:4156/levelLoc`);
@@ -17,6 +25,10 @@ const getLayerInfor= async ()=>{
     }
     
 }
+/**
+ * 将数据和坐标转化echart所需要的格式
+ * loc:经纬度
+ */
 const ex2_convertType=(loc,ex2_data)=>{
     let res=[];
     for (let data of ex2_data){
@@ -48,6 +60,9 @@ const ex2_convertType=(loc,ex2_data)=>{
     }
     return res;
 }
+/**
+ * 获取echart的option
+ */
 const fnoption = (convertData,data,loc) =>{
     let d=data[0];
     let radix=500;
